@@ -24,7 +24,6 @@ permalink: /technology/reactrouter
     </BrowserRouter>
     ),el
   )
-
   const App = () => (
     <div>
       <div>
