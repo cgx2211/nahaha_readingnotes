@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 经济
-permalink: /economicwayofthinking/
+title: 心理学
+permalink: /psychology/
 ---
-{% for post in site.categories.economic %}
+{% for post in site.categories.psychology %}
   <a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a>
 {% endfor %}
