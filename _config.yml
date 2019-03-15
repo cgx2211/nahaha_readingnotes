@@ -17,7 +17,7 @@ title: 那哈哈的读书笔记
 email: cgx2211@163.com
 description: >- # this means to ignore newlines until "baseurl:"
   试着玩一下
-baseurl: "nahaha_readingnotes" # the subpath of your site, e.g. /blog
+baseurl: "/nahaha_readingnotes" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Cgxnahaha
 github_username:  cgx2211

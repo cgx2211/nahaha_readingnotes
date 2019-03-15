@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 第三章
+permalink: /economicwayofthinking/chapterthree
 ---
 - 大多数物品都是稀缺的，需要付出代价来换取。而大多数稀缺品都有代替品。
 - 我们的选择依赖所面临的情景。经济学的思考方式着眼于边际价值。人们所期望的额外收益与成本就是边际收益与边际成本，其他不重要。

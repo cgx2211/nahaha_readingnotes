@@ -1,6 +1,7 @@
 ---
 layout: post
 title: javascript
+permalink: /technology/javascript
 ---
 
 ### JavaScript的强大

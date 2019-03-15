@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 路西法效应
+permalink: /psychology/lucifereffect
 ---
 ### 十四章
   一个群体的入会仪式越严苛，成员对其忠诚度越高。

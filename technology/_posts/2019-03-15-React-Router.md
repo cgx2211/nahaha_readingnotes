@@ -1,6 +1,7 @@
 ---
 layout: post
 title: React Router
+permalink: /technology/reactrouter
 ---
 ### 路由的哲理
   静态路由与动态路由的区别。  

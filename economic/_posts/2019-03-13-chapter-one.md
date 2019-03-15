@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 第一章
+permalink: /economicwayofthinking/chapterone
 ---
 - 高峰期的交通 —— 社会协作成果的典型。
 - 所有社会现象均源于个体的行为与互动，人们基于期望的额外收益与成本做出选择。  
