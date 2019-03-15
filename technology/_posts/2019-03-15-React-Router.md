@@ -16,7 +16,8 @@ permalink: /technology/reactrouter
   只论证了几个小时，我们就确定了这将是路由未来的方向，弃用之前总是游离在React之外的API，相信你们会喜欢。  
 ### 动态路由  
   动态路由是指当应用启动时一并渲染，而不是一套游离于应用之外的设置。这意味着所有的一切都是Router的组件。  
-  ```
+  {% raw %}
+  ```javascript
   ReactDOM.render((
     <BrowserRouter>
       <App/>
@@ -34,7 +35,8 @@ permalink: /technology/reactrouter
       </div>
     </div>
   )
-  ```  
+  ```
+  {% endraw %}
   由上看出，路由作为组件，都属于整体应用的一部分。
 ### 嵌套路由  
   你是怎么嵌套div的？那就怎么嵌套路由就可以了。
