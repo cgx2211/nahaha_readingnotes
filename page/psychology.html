@@ -1,0 +1,10 @@
+---
+layout: page
+title: 心理学
+showList: true
+---
+<ul class="book-link psychology-link">
+  {%- for post in site.categories.psychology -%}
+  <li><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></li>
+  {%- endfor -%}
+</ul>

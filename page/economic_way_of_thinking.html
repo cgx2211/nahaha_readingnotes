@@ -1,0 +1,10 @@
+---
+layout: page
+title: 经济
+showList: true
+---
+<ul class="book-link economic-link">
+  {%- for epost in site.categories.economic -%}
+  <li><a href="{{epost.url | prepend: site.baseurl}}">{{epost.title}}</a></li>
+  {%- endfor -%}
+</ul>
