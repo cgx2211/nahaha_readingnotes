@@ -1,6 +1,9 @@
 .trigger{
   position: relative;
 }
+.page-link-container{
+  display: inline-block;
+}
 .page-link{
   line-height: 2.5!important;
   display: inline-block;
@@ -10,7 +13,7 @@
 }
 .book-link{
   list-style: none;
-  display: block;
+  display: none;
   border-radius: 2%;
   width: 100px;
   background-color: white;
@@ -50,6 +53,11 @@
 }
 
 .psychology-link{
-  left:40px;
+  left:88px;
+  top:46px;
+}
+
+.technology-link{
+  left:-34px;
   top:46px;
 }
