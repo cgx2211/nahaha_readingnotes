@@ -44,11 +44,12 @@ catalog: economicwayofthinking
 - 大多数物品都是稀缺的，需要付出代价来换取。而大多数稀缺品都有代替品。
 - 我们的选择依赖所面临的情景。经济学的思考方式着眼于边际价值。人们所期望的额外收益与成本就是边际收益与边际成本。
 - 需求曲线，将物品的价格与使用量分别作为纵坐标、横坐标描绘出的图像，即为需求曲线。当价格升高，物品的需求量降低，人们会找到替代品来达成目的。  
-<div align="center"><img src="{{site.baseurl}}/assets/images/needs.png" alt="needs" /></div>
+{% include needs_chart.html %}
 - 需求法则 —— 其他条件的不变的时候，物品价格上涨，则需求量下降；物品价格下跌，需求量上升。适用于一切稀缺品。
 - 需求与需求量的区别。需求是一种**关系**，描述不同价格与人们意愿购买的数量之间的关系。需求量是**数量**，在某一价格下人们意愿购买的具体数量。
 - 在其他条件不变，而价格变化的情况下，需求量会随之变动并构成需求曲线。当价格持平，其他条件变动时，需求曲线本身可能变动，同样满足需求法则。
 <div align="center"><img src="{{site.baseurl}}/assets/images/needs_change.png" alt="needs_change" /></div>
+{% include needs_change.html %}
 - 任何事物都是相互依赖的。
   + 消费者的数量变化
   + 消费者的喜好变化
