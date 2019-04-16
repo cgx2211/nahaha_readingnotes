@@ -84,6 +84,7 @@ catalog: economicwayofthinking
   + 假设同等条件下，可种植14.5单位大豆或者10单位玉米。
   + 假设大豆的价格为1美元/单位。那么这里绘制出玉米的供给曲线图。
   <div align="center"><img src="{{site.baseurl}}/assets/images/supply.png" alt="supply.png" /></div>
+  {% include corn_needs.html %}
   + 同样，备选品(大豆)的价格会影响供给曲线，同时对未来价格走向的预期也会影响供给曲线上移或下移。
 - 供给的弹性。公式：供给量变化的百分比/价格变化的百分比。结果大于1，表示相对有弹性。否则就是相对缺乏弹性。
 
