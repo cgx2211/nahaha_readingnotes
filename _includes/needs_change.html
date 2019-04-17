@@ -1,4 +1,32 @@
-<div>
+<div id="changeBefore" class="highcharts_container"></div>
+{% for javascript in site.highcharts_scripts %}
+  <script src="{{ javascript }}"></script>
+{% endfor %}
+<script type="text/javascript">
+  var options = {
+      chart: {},
+      title: {
+          text: '需求曲线'
+      },
+      xAxis: {
+        min:0,title: {text: '需求量'}
+      },
+      yAxis: {
+          min:0,title: {text: '价格'}
+      },
+      series: [{
+        name: '需求量/价格',type:'line',
+        data: [[3,25],[15,4]]
+      },{
+        name: '需求量/价格',type:'line',
+        data: [[3,15],[12,2]]
+      }]
+  };
+  // 图表初始化函数
+  var chart = Highcharts.chart('changeBefore', options);
+</script>
+
+<!-- <div>
   <canvas id="needsBefore" width="400" height="400"></canvas>
   <canvas id="needsAfter" width="600" height="400"></canvas>
 </div>
@@ -31,4 +59,4 @@
     }]
   };
   movieChart.setOption(option);
-</script>
+</script> -->

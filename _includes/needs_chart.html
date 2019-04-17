@@ -1,34 +1,24 @@
-<div>
-  <canvas id="needsChart" width="600" height="400"></canvas>
-</div>
-{% for javascript in site.echart_scripts %}
+<div id="needsChart" class="highcharts_container"></div>
+{% for javascript in site.highcharts_scripts %}
   <script src="{{ javascript }}"></script>
 {% endfor %}
 <script type="text/javascript">
-  var movieChart = echarts.init(document.getElementById('needsChart'));
-  var option = {
-    title: {
-        text: '来看看价格需求曲线'
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer:{
-        label:{show:true}
-      }
-    },
-    legend: {},
-    xAxis: {
-        type:'value',name:'需求量'
-    },
-    yAxis: {
-      type:'value',name:'价格'
-    },
-    series: [{
-        name: '需求曲线',
-        type: 'line',smooth: true,
-        // data: [[100,10],[150,8],[200,6],[320,4],[450,2],[550,1],[750,0.5],[950,0.2]]
-        data: [[0.1,10],[3,2],[10,0.1]]
-    }]
+  var options = {
+      chart: {},
+      title: {
+          text: '需求曲线'
+      },
+      xAxis: {
+        min:0,title: {text: '需求量'}
+      },
+      yAxis: {
+          min:0,title: {text: '价格'}
+      },
+      series: [{
+        name: '需求量/价格',type:'spline',
+        data: [[0.1,11.3],[3.2,2.6],[10,0.2]]
+      }]
   };
-  movieChart.setOption(option);
+  // 图表初始化函数
+  var chart = Highcharts.chart('needsChart', options);
 </script>
