@@ -39,3 +39,28 @@ permalink: /technology/reactrouter
   由上看出，路由作为组件，都属于整体应用的一部分。
 ### 嵌套路由  
   你是怎么嵌套div的？那就怎么嵌套路由就可以了。
+### 静态路由
+  之前版本的React Router都是通过静态路由配置，在渲染页面之前就匹配路由，自从v4版本引入动态路由之后，静态路由越发鸡肋。为了满足先前版本的使用，我们依然在继续开发
+### Update Blocking
+  React Router有很多组件，通过自身当前的位置决定在哪里渲染。  
+  默认来说，当前位置是由React内容模态框传递给组件的。当路由位置变化后，组件会根据内容位置重新渲染  
+  针对应用渲染优化，React提供了两个方法：shouldComponentUpdate生命周期方法与PureComponent。  
+  当渲染条件不满足，组件将不会随着路由的改变而同步渲染。  
+  举个栗子
+  {% raw %}
+  ```javascript
+  class UpdateBlocker extends React.PureComponent {
+    render() {
+      return (
+        <div>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/faq">F.A.Q.</NavLink>
+        </div>
+      );
+    }
+  }
+  ```
+  {% endraw %}
+  以上是个导航，当组件挂载时，下面的子元素会根据当前路由位置信息依次渲染。  
+  假设路由切换了，从/faq切换到了/about，页面其他部分完成了变化。  
+  但当前组件中并未检测到任何的属性、状态变化，因此组件内的子元素不会重新渲染。
