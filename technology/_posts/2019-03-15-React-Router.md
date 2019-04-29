@@ -42,7 +42,7 @@ permalink: /technology/reactrouter
 ### 静态路由
   之前版本的React Router都是通过静态路由配置，在渲染页面之前就匹配路由，自从v4版本引入动态路由之后，静态路由越发鸡肋。为了满足先前版本的使用，我们依然在继续开发
 ### Update Blocking
-  React Router有很多组件，通过自身当前的位置决定在哪里渲染。  
+  React Router有很多组件，通过环境路由的定位来决定渲染些什么。    
   默认来说，当前位置是由React内容模态框传递给组件的。当路由位置变化后，组件会根据内容位置重新渲染  
   针对应用渲染优化，React提供了两个方法：shouldComponentUpdate生命周期方法与PureComponent。  
   当渲染条件不满足，组件将不会随着路由的改变而同步渲染。  
@@ -61,6 +61,18 @@ permalink: /technology/reactrouter
   }
   ```
   {% endraw %}
-  以上是个导航，当组件挂载时，下面的子元素会根据当前路由位置信息依次渲染。  
+  以上代码段是导航，当组件挂载时，下面的子元素会根据当前路由位置信息依次渲染。  
   假设路由切换了，从/faq切换到了/about，页面其他部分完成了变化。  
-  但当前组件中并未检测到任何的属性、状态变化，因此组件内的子元素不会重新渲染。
+  但当前组件中并未检测到任何的属性、状态变化，因此组件内的子元素不会重新渲染。  
+  组件的shouldComponentUpdate方法能检测到路由变化，并告知组件应该重新渲染了。
+  如果手动触发shouldComponentUpdate方法，需要手动对比当前路由与跳转的context.router对象。  
+  作为用户，不直接操作context而比较路由则是最完美的办法。  
+  第三方代码
+  你可能会发现，在路由变动之后，无论是否手动调用shouldComponentUpdate，组件都不会更新。  
+  这很可能因为第三方在调用shouldComponentUpdate。比如react-redux's connect与mobx-react's observer。  
+  使用第三方代码的时候，你可能无法很好的控制shouldComponentUpdate。相对的，构建代码的时候，你需要考虑如何能更容易检测到路由变动。  
+  由connect与observer创建的组件使用的shouldComponentUpdate方法，都只做props浅层比较。组件更新需要至少一个props有变动。  
+  因此为了确保组件更新，你可以在路由变动的时候，让组件的props发生变动。  
+  原生组件PureComponent  
+  原生组件并不会直接调用shouldComponentUpdate方法，与shouldComponentUpdate类似。浅层对比props与state。  
+  没有任何变化，组件就不会更新。所以想让组件更新？你知道该怎么做了
