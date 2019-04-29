@@ -1,0 +1,24 @@
+<div id="academyChart3" class="highcharts_container"></div>
+<script type="text/javascript">
+  var options = {
+      chart: {},
+      title: {
+          text: '上大学啦'
+      },
+      xAxis: {
+        min:0,title: {text: '需求'}
+      },
+      yAxis: {
+        title: {text: '学费'}
+      },
+      series: [{
+        name: '需求',type:'line',
+        data: [[0,60000],[6000,0]]
+      },{
+        name: '边际收益',type:'line',
+        data: [[0,60000],[3000,0]]
+      }]
+  };
+  // 图表初始化函数
+  var chart = Highcharts.chart('academyChart3', options);
+</script>
