@@ -75,4 +75,19 @@ permalink: /technology/reactrouter
   因此为了确保组件更新，你可以在路由变动的时候，让组件的props发生变动。  
   原生组件PureComponent  
   原生组件并不会直接调用shouldComponentUpdate方法，与shouldComponentUpdate类似。浅层对比props与state。  
-  没有任何变化，组件就不会更新。所以想让组件更新？你知道该怎么做了
+  没有任何变化，组件就不会更新。所以想让组件更新？你知道该怎么做了。  
+  快速解决方案  
+  如果你使用高级组件比如react-redux的connect或者Mobx的observer，可以直接用withRouter包裹起来，以避免非同步渲染。  
+  关于这个解决方案可查看[Redux guide](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/redux.md#blocked-updates)。要搞明白为什么这不是最有效的解决方案，可以看[这里](https://github.com/ReactTraining/react-router/pull/5552#issuecomment-331502281)。  
+  推荐的解决方案  
+  避免非同步的渲染，关键就是将路由对象作为属性传递给组件。路由一旦变化，组件就能检测到并更新。  
+  取得路由  
+  为了给组件传递当前路由对象，那首先要获取当前路由对象。常规方式便是使用<Route>组件。当<Route>匹配路由时，渲染子元素会将当前路由信息传递过去。  
+  因此这就有两种方式可以将路由当作对象传入
+  - 组件直接作为<Route>的子元素渲染  
+  - <Route>也可将路由对象传递给任何一个子元素  
+  这特么的叫两种方式？  
+  当组件不通过<Route>渲染，或者组件渲染时没有路由对象作为参数的时候咋办？  
+  依然是两种方式：  
+  - 写一个没有路径的<Route>，无论路由处在什么位置，无路径的<Route>总是会渲染  
+  - 用withRouter包裹高阶组件  
