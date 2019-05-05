@@ -17,7 +17,7 @@ permalink: /technology/reactrouter
 ### 动态路由  
   动态路由是指当应用启动时一并渲染，而不是一套游离于应用之外的设置。这意味着所有的一切都是Router的组件。  
   {% raw %}
-  ```javascript
+  ```html
   ReactDOM.render((
     <BrowserRouter>
       <App/>
@@ -48,7 +48,7 @@ permalink: /technology/reactrouter
   当渲染条件不满足，组件将不会随着路由的改变而同步渲染。  
   举个栗子
   {% raw %}
-  ```javascript
+  ```html
   class UpdateBlocker extends React.PureComponent {
     render() {
       return (
@@ -86,7 +86,7 @@ permalink: /technology/reactrouter
   因此这就有两种方式可以将路由当作对象传入
   - 组件直接作为<Route>的子元素渲染  
   - <Route>也可将路由对象传递给任何一个子元素  
-  这特么的叫两种方式？  
+
   当组件不通过<Route>渲染，或者组件渲染时没有路由对象作为参数的时候咋办？  
   依然是两种方式：  
   - 写一个没有路径的<Route>，无论路由处在什么位置，无路径的<Route>总是会渲染  
