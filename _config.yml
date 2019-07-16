@@ -34,7 +34,7 @@ chartjs_scripts:
 echart_scripts:
   - https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js
 highcharts_scripts:
-  - http://cdn.highcharts.com.cn/highcharts/highcharts.js
+  - https://cdn.highcharts.com.cn/highcharts/highcharts.js
 plugins:
   - jekyll-feed
 defalults:
