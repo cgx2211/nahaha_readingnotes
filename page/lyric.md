@@ -381,7 +381,7 @@ catalog: lyric
 
 #### 僕らの手には何もないけど
   RAM WIRE  
-  [MV](https://www.bilibili.com/video/av10606674)
+  [MV](https://www.bilibili.com/video/BV1ds411z7Av)
 
   君(きみ)に見(み)せたい ものがあるんだ  
   孤独(こどく)な夜(よる)にもきっと  
