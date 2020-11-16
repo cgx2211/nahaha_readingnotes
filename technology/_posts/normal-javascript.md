@@ -1,7 +1,7 @@
 ---
 layout: post
-title: javascript进阶
-permalink: /technology/advanced_javascript
+title: javascript
+permalink: /technology/basic_javascript
 ---
 
 ### JavaScript的强大
