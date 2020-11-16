@@ -436,7 +436,7 @@ catalog: lyric
 
 #### SomeLikeItHot!!
   SPYAIR  
-  [MV](https://www.bilibili.com/video/BV1tx411L7Yy)
+  [R姐翻唱](https://www.bilibili.com/video/BV1tx411L7Yy)
 
   どっか上(うわ)の空(そら)で　さっぱり闻(き)いてないんだろう?  
   わざとこぼすサイン　见逃(みのが)す君(きみ)  
