@@ -434,7 +434,7 @@ catalog: lyric
 
 ***
 
-#### SomeLikeItHot!!
+#### SomeLikeItHot
   SPYAIR  
   [R姐翻唱](https://www.bilibili.com/video/BV1tx411L7Yy)
 
