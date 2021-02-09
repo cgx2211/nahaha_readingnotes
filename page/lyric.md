@@ -206,8 +206,8 @@ catalog: lyric
   RADWIMPS  
   作词:野田洋次郎  
   作曲:野田洋次郎  
-  [R姐翻唱](https://www.bilibili.com/video/BV1Ux411y7KK)
-  [6分钟动画版](https://www.acfun.cn/v/ac14903619)
+  [R姐翻唱](https://www.bilibili.com/video/BV1Ux411y7KK)  
+  [6分钟动画版](https://www.acfun.cn/v/ac14903619)  
 
   まだこの世界(せかい)は　仆(ぼく)を饲(か)いならしてたいみたいだ  
   望(のぞ)み通(と)りいいだろう　美(うつく)しくもがくよ  
