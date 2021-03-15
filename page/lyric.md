@@ -568,7 +568,7 @@ catalog: lyric
 
   ***
 
-  #### 我爱你
+#### 我爱你
   高桥瞳  
   [MAD](https://www.bilibili.com/video/BV1ks411S7kT)
 
