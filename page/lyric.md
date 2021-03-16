@@ -843,7 +843,7 @@ catalog: lyric
 
 ***
 
-#### 奏（かなで）
+#### 奏
   作詞·作曲：大橋卓弥、常田真太郎　　編曲：川田瑠夏  
   [MV](https://www.bilibili.com/video/BV1SW411L7Mn?p=1)  
 
