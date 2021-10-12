@@ -370,7 +370,7 @@ catalog: lyric
 
 #### Lemon
   米津玄师  
-  [R姐翻唱](https://www.bilibili.com/video/av23978884)
+  [R姐翻唱](https://www.bilibili.com/video/BV1HA411L79N)
 
   梦（ゆめ）ならばどれほどよかったでしょう  
   未（いま）だにあなたのことを梦（ゆめ）にみる  
