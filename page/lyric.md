@@ -7,7 +7,7 @@ catalog: lyric
 
 #### 打上花火
   DAOKO × 米津玄师  
-  [R姐翻唱](https://www.bilibili.com/video/av21059454)
+  [R姐翻唱](https://www.bilibili.com/video/BV1Xh411v7W4)
 
   あの日见渡（ひみわた）した渚（なぎさ）を  
   今（いま）も思（おも）い出（だ）すんだ  
