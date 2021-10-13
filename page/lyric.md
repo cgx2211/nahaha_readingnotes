@@ -886,7 +886,7 @@ catalog: lyric
 ***
 
 #### Reset
-  作詞:向井太一 作曲:向井太一・CELSIOR COUPE
+  作詞:向井太一 作曲:向井太一・CELSIOR COUPE  
   [MV](https://www.bilibili.com/video/BV1gr4y1F7zA)  
   [现场](https://www.bilibili.com/video/BV1Gy4y1q79F)  
 
