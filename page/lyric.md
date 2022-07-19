@@ -72,7 +72,7 @@ catalog: lyric
   RADWIMPS  
   作词:野田洋次郎  
   作曲:野田洋次郎  
-  [R姐翻唱](https://www.bilibili.com/video/av8177135)
+  [R姐翻唱](https://www.bilibili.com/video/BV1df4y1t73v)
 
   二人（ふたり）の间（あいだ） 通（とお）り过（す）ぎた风（かぜ）は  
   どこから寂（さみ）しさを运（はこ）んできたの  
@@ -140,7 +140,7 @@ catalog: lyric
   RADWIMPS  
   作词:野田洋次郎  
   作曲:野田洋次郎  
-  [R姐翻唱](https://www.bilibili.com/video/av10459564)
+  [R姐翻唱](https://www.bilibili.com/video/BV1n64y1k7Gq)
 
   やっと眼（め）を覚（さ）ましたかい  
   それなのになぜ眼（め）も合（あ）わせやしないんだい?  
@@ -202,12 +202,12 @@ catalog: lyric
 
 ***
 
-#### sparkle
+#### Sparkle
   RADWIMPS  
   作词:野田洋次郎  
   作曲:野田洋次郎  
   [完整版](https://www.bilibili.com/video/BV13s411r794)  
-  [R姐翻唱](https://www.bilibili.com/video/BV1Ux411y7KK)  
+  [R姐翻唱](https://www.bilibili.com/video/BV1Ub4y1z7ZG)  
 
   まだこの世界（せかい）は　仆（ぼく）を饲（か）いならしてたいみたいだ  
   望（のぞ）み通（と）りいいだろう　美（うつく）しくもがくよ  
@@ -249,7 +249,7 @@ catalog: lyric
 
 #### SecretBase～君がくれたもの～
   ZONE  
-  [R姐翻唱](https://www.bilibili.com/video/av17990275/)  
+  [现场版](https://www.bilibili.com/video/BV1Nx411Z7gW/)  
 
   君（きみ）と夏（なつ）の终（お）わり 将来（しょうらい）の梦（ゆめ）  
   大（おお）きな希望（きぼう） 忘（わす）れない  
