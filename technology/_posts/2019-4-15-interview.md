@@ -23,6 +23,7 @@ permalink: /technology/interviewquestions
   - 请描述下事件冒泡机制
     + 冒泡型事件：事件按照从最特定的事件目标到最不特定的事件目标(document对象)的顺序触发
     + 捕获型事件：事件从最不精确的对象(document 对象)开始触发，然后到最精确(也可以在窗口级别捕获事件，须由开发人员指定)
+
 ### javascript
   - 五种基本类型
     + Undefined、Null、Boolean、Number和String
@@ -35,6 +36,8 @@ permalink: /technology/interviewquestions
   - 聊一聊闭包
     + 闭包就是定义在函数内部的函数，可以访问自己内部的变量、父级函数内部的变量、全局变量
   - 聊一聊具体哪个场景下能用到闭包
+    + 闭包可以创建私有变量和函数，实现模块化的开发。避免变量全局污染
+    + 使用闭包可以创建私有变量和函数的对象，实现数据的私有化与封装
   - 解释下JavaScript中this是如何指向的
     + this永远指向函数运行时所在的对象。匿名函数或不处于任何对象中的函数指向window
     + 如果是call，apply,with，指定的this是谁，就是谁
@@ -42,6 +45,7 @@ permalink: /technology/interviewquestions
   - call和apply的区别是什么
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
+
 ### CSS相关
   - display:none和visibility:hidden的区别
     + 没有；有，看不见。
@@ -79,6 +83,7 @@ permalink: /technology/interviewquestions
     + 3开头 （请求被重定向）
     + 4开头 （请求错误）
     + 5开头（服务器错误）
+
 ### cookie
   - IE6以前支持最多20个cookie，7以后版本支持最多50个；
   - FF支持50个；
@@ -131,6 +136,7 @@ permalink: /technology/interviewquestions
     + 大致可以分为三类：初始化、更新状态/属性、注销
   - 聊聊JSX
     + 脸书发布React的时候，同时引入了混合JS与HTML的JSX。浏览器无法直接解析，需结合babel、webpack工具
+
 ### 闲聊
   - Jquery为何可以不断的.调用？
   - 页面上需要横向排布的时候，你一般用什么办法？遇到过什么坑?
