@@ -5,11 +5,12 @@ permalink: /technology/interviewquestions
 ---
 ### Html
   - Doctype的作用？
-    + 告知浏览器用什么文档类型规范来解析当前文档
+    + 声明文档类型。指定HTML，让浏览器进入不同的文档模式（渲染模式或者呈现模式），确保页面可以正常渲染，并提高跨浏览器兼容性  
   - 请简单介绍严格模式与混杂模式
     + 严格模式表示以浏览器支持的最高标准运行
     + 混杂模式，以宽松标准兼容老浏览器
     + 没有Doctype，或格式不正确的文档以混杂模式处理
+    + 严格模式下全局作用域中函数的this指向undefined
   - 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
     + 行内元素：a span img input select
     + 块级元素：div ul ol li dl dt dd h1 p
@@ -30,6 +31,11 @@ permalink: /technology/interviewquestions
     + Object、Array和Function则属于引用类型
   - 简单描述一下undefined与not defined有什么区别？
     + Undefined是声明了并没有负值，而not defined指该变量没有被声明
+  - unll与undefined的区别
+    + null代表空，undefined代表未定义，以前只有null，并且null可直接转换为0。这导致会出很多不易定位的问题，所以新增了undefined类型
+  - for in与for of的区别
+    + for in遍历当前对象中可枚举的属性，若原型链上有，也会遍历
+    + for of可以遍历数组，因为数组有迭代器，但对象没有
   - ==和===有什么不同
     + == equality 等同，=== identity 恒等。 ==， 两边值类型不同的时候，要先进行类型转换，再比较。 ===，不做类型转换，类型不同的一定不等
   - 写一个三元表达式
@@ -42,9 +48,15 @@ permalink: /technology/interviewquestions
     + this永远指向函数运行时所在的对象。匿名函数或不处于任何对象中的函数指向window
     + 如果是call，apply,with，指定的this是谁，就是谁
     + 普通的函数调用，函数被谁调用，this就是谁
-  - call和apply的区别是什么
-    + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。没有提供thisObj参数，那么默认为Global对象
+  - 大概聊一下改变this指向的call,apply,bind
+    + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
+    + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
+
+### ES6
+  - ES6的新特性
+    + 增加模板字符串：`${name}`
+    + 增加箭头函数，数组对象解构赋值，扩展运算符(...)，async/await
 
 ### CSS相关
   - display:none和visibility:hidden的区别
@@ -54,6 +66,7 @@ permalink: /technology/interviewquestions
     + 不同点：absolute的”根元素“是可以设置的，而fixed的”根元素“固定为浏览器窗口
   - CSS的盒子模型？
     + W3C的盒模型宽度并不包含padding与border
+    + 说人话就是IE的盒模型，宽度会把padding跟border都包含进去，而W3C模型不会，一般谷歌上都用的W3C模型
     <div align="center"><img width="330" src="{{site.baseurl}}/assets/images/box-model.jpg" alt="needs_change" /></div>
   - CSS样式优先级？
     + !important > 内联 >  id > class > tag
@@ -71,6 +84,13 @@ permalink: /technology/interviewquestions
     + link是xhtml标签，除了加载css外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS
     + link引用CSS时候，页面载入时同时加载；@import需要在页面完全加载以后、并且引用的CSS文件加载完成后才加载
     + link支持使用javascript控制去改变样式，无兼容性问题；而@import不支持JS控制，低版本浏览器有兼容性问题
+
+### TypeScript
+  - TypeScript是什么？
+    + TS是js的超集，js作为若语言类型，编译前会有很明显的错误，TS的静态检查在编译之前能发现这些错误。最终编译结果会擦除类型断言形成可运行的JS
+  - const与readonly有什么区别
+    + const用于变量，readnoly用于属性
+    + const在运行时检查，readnoly在编译时检查
 
 ### 网络传输
   - 一次完整的HTTP传输
