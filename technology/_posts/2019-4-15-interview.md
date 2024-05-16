@@ -91,6 +91,11 @@ permalink: /technology/interviewquestions
   - const与readonly有什么区别
     + const用于变量，readnoly用于属性
     + const在运行时检查，readnoly在编译时检查
+  - any void unknown never有什么区别
+    + any代表一切，可以赋值给任何值，任何值也可以赋值给any
+    + void，用于函数没有返回值
+    + never 没有值，很少用
+    + unknown，不知道什么值，任何值可以赋给unknown，但unknown不能赋值给其他值
 
 ### 网络传输
   - 一次完整的HTTP传输
