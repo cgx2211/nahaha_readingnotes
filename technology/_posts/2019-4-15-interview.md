@@ -10,7 +10,6 @@ permalink: /technology/interviewquestions
     + 严格模式表示以浏览器支持的最高标准运行
     + 混杂模式，以宽松标准兼容老浏览器
     + 没有Doctype，或格式不正确的文档以混杂模式处理
-    + 严格模式下全局作用域中函数的this指向undefined
   - 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
     + 行内元素：a span img input select
     + 块级元素：div ul ol li dl dt dd h1 p
@@ -48,6 +47,7 @@ permalink: /technology/interviewquestions
     + this永远指向函数运行时所在的对象。匿名函数或不处于任何对象中的函数指向window
     + 如果是call，apply,with，指定的this是谁，就是谁
     + 普通的函数调用，函数被谁调用，this就是谁
+    + 严格模式下this指向undefined
   - 大概聊一下改变this指向的call,apply,bind
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
@@ -57,6 +57,12 @@ permalink: /technology/interviewquestions
   - ES6的新特性
     + 增加模板字符串：`${name}`
     + 增加箭头函数，数组对象解构赋值，扩展运算符(...)，async/await
+  - 箭头函数与function有什么区别
+    + 箭头函数相当于匿名函数，简化了定义
+    + 箭头函数不能作为构造函数
+    + 箭头函数没有原型
+    + 箭头函数用扩展运算符获取剩余参数，而function用argument
+    + 箭头函数this指向上层作用域，若没有则直接指向window
 
 ### CSS相关
   - display:none和visibility:hidden的区别
@@ -98,16 +104,19 @@ permalink: /technology/interviewquestions
     + unknown，不知道什么值，任何值可以赋给unknown，但unknown不能赋值给其他值
 
 ### 网络传输
+  - HTTP是什么
+    + HTTP全称HyperText Transfer Protocol，超文本传输协议。计算机在传输数据内容（文字，图片，视频等）时的规范
   - 一次完整的HTTP传输
     + 域名解析 => 发起TCP三次握手 => 建立TCP链接后发起http请求 => 服务端响应http请求，客户端获得html => 浏览器解析html，请求依赖的资源
   - http 和 https 有何区别?
     + http是指HTTP协议运行在TCP之上。所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。
     + https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的内容都经过对称加密，对称加密的密钥则透过服务器方的证书采用非对称加密
   - HTTP常见状态码
+    + 1开头 请求的中间态，需要继续操作
     + 2开头 （请求成功）表示成功处理了请求的状态代码。
     + 3开头 （请求被重定向）
     + 4开头 （请求错误）
-    + 5开头（服务器错误）
+    + 5开头 （服务器错误）
 
 ### cookie
   - IE6以前支持最多20个cookie，7以后版本支持最多50个；
