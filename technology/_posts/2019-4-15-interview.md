@@ -54,7 +54,7 @@ permalink: /technology/interviewquestions
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
   - 设计模式相关
     + 订阅者模式的例子
-    ```
+    ```javascript
     class EventEmitter {
       constructor(){
         this.events = {};
@@ -174,7 +174,8 @@ permalink: /technology/interviewquestions
   - 单向绑定与双向绑定有啥区别？
     + 单向绑定只有第一次model与scope绑定时赋值，而双向绑定则会跟随model变化而变化
   - angular中定义服务，如何返回promise？简单写一下
-    ```
+    + 使用$q服务
+    ```javascript
     angular.factory('testService', function($q) {
       return {
         getName: function() {
@@ -190,7 +191,7 @@ permalink: /technology/interviewquestions
       };
     });
     ```
-    + 使用$q服务
+    
 
 ### React
   - React是什么？与其他的JS框架有何区别？
