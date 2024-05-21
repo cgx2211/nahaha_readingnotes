@@ -53,7 +53,7 @@ permalink: /technology/interviewquestions
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
   - 设计模式相关
-    + 订阅者模式的例子
+    + 订阅者模式的例子  
     ```javascript
     class EventEmitter {
       constructor(){
@@ -83,6 +83,7 @@ permalink: /technology/interviewquestions
 
     myEmitter.emit('greet','wuhu~');
     ```
+
 
 ### ES6
   - ES6的新特性
