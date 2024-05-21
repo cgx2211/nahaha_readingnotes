@@ -54,23 +54,7 @@ permalink: /technology/interviewquestions
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
   - 设计模式相关
     + 订阅者模式的例子  
-    ```javascript
-    angular.factory('testService', function($q) {
-      return {
-        getName: function() {
-          var deferred = $q.defer();
 
-          //API call here that returns data
-          testAPI.getName().then(function(name) {
-            deferred.resolve(name);
-          });
-
-          return deferred.promise;
-        }
-      };
-    });
-    ```
-    
     ```javascript
     class EventEmitter {
       constructor(){
