@@ -52,6 +52,37 @@ permalink: /technology/interviewquestions
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
+  - 设计模式相关
+    + 订阅者模式的例子
+    ```
+    class EventEmitter {
+      constructor(){
+        this.events = {};
+      }
+      on(event,listener){
+        if(!this.events[event]){// 没有这个事件就初始化一下
+          this.events[event] = [];
+        }
+        // 然后将linstener回调推入事件对象中
+        this.events[event].push(listener);
+      }
+      emit(event,...args){
+        if(this.events[event]){
+          this.events[event].forEach((listener) => {
+            listener.call(this,...args);
+          })
+        }
+      }
+    }
+
+    const myEmitter = new EventEmitter();
+
+    myEmitter.on('greet',(name)=>{
+      console.log(name)
+    })
+
+    myEmitter.emit('greet','wuhu~');
+    ```
 
 ### ES6
   - ES6的新特性
