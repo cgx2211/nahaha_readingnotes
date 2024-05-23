@@ -32,6 +32,10 @@ permalink: /technology/interviewquestions
     + Undefined是声明了并没有负值，而not defined指该变量没有被声明
   - unll与undefined的区别
     + null代表空，undefined代表未定义，以前只有null，并且null可直接转换为0。这导致会出很多不易定位的问题，所以新增了undefined类型
+  - JS中如何判断数据类型？
+    + typeof，判断未经过计算的操作数类型。适用于基本数据类型与引用数据类型，判断快速，但所有对象类型都返回'objcet'
+    + instanceof，检测某个对象是否为某个构造函数的实例。仅适用于对象类型，基本类型无法判断。且需要同样的上下文。
+    + Object.prototype.toString，这个方法可以返回对象内部的[[class]]属性，以更精准的判断对象类型，包括日期，正则等。使用起来稍显繁琐
   - for in与for of的区别
     + for in遍历当前对象中可枚举的属性，若原型链上有，也会遍历
     + for of可以遍历数组，因为数组有迭代器，但对象没有
@@ -83,6 +87,28 @@ permalink: /technology/interviewquestions
     })
 
     myEmitter.emit('greet','wuhu~');
+    ```
+  - yield是什么
+    + JS中生成器函数（generator function）的一部分，调用生成器函数并不会立即执行代码，而是返回一个生成器对象，生成器对象可调用next()方法来执行代码，每次执行到yield便会暂停，并返回一个值，直到下次调用next()方法。
+    + 举个栗子
+
+    ```javascript
+    function* numberGenerator(){
+      console.log('我特么来辣');
+      yield 1;
+      console.log('我特么第二步');
+      yield 2;
+      console.log('我特么第三步');
+      yield 3;
+      console.log('寄！');
+    }
+
+    const myGen = numberGenerator();
+    
+    console.log(gen.next()); // { value: 1, done: false }
+    console.log(gen.next()); // { value: 2, done: false }
+    console.log(gen.next()); // { value: 3, done: false }
+    console.log(gen.next()); // { value: undefined, done: true }
     ```
 
 
@@ -204,6 +230,19 @@ permalink: /technology/interviewquestions
     + 大致可以分为三类：初始化、更新状态/属性、注销
   - 聊聊JSX
     + 脸书发布React的时候，同时引入了混合JS与HTML的JSX。浏览器无法直接解析，需结合babel、webpack工具
+
+### Redux
+  - Redux是什么
+    + 介于React的单项数据流，在复杂应用用共享状态会很麻烦，Redux就是为了解决这个问题而存在的
+    + Redux中有单一的数据源，数据都保存在store中，用dispatch方法发送action使用纯函数来执行修改
+    + rducer是个纯函数，参数为当前的state,action，并返回最新的state
+  - Redux是同步的还是异步的
+    + Redux默认是同步的，当disPatch一个action后，会即刻调用reducer，数据也会实时更新，这样便让store中的数据变得流畅并且可预测。通过中间键可以实现异步操作。
+  - Redux的中间键
+    + 中间键（Middleware）是指在action被发送到reducer之前处理的地方
+    + redux-thunk 允许action创建者返回一个函数，而不是一个action对象。这个函数可以接收disPatch和getState作为参数。
+    + redux-saga 另一种基于ES6生成器的异步处理中间键。
+    + redux-logger 日志记录，查看每个action及其产生的状态变化
 
 ### 闲聊
   - Jquery为何可以不断的.调用？
