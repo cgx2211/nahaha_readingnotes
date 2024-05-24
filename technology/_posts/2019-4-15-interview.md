@@ -46,7 +46,12 @@ permalink: /technology/interviewquestions
     + 闭包就是定义在函数内部的函数，可以访问自己内部的变量、父级函数内部的变量、全局变量
   - 聊一聊具体哪个场景下能用到闭包
     + 闭包可以创建私有变量和函数，实现模块化的开发。避免变量全局污染
-    + 使用闭包可以创建私有变量和函数的对象，实现数据的私有化与封装
+    + 使用闭包可以创建私有变量和函数的对象，实现数据的私有化与封装。例如单例模式中，唯一的私有变量便是闭包的直接运用
+  - 当js中调用new的时候，发生了什么
+    + 创建一个空对象，并继承构造函数的prototype属性。
+    + 绑定this，将构造函数中的this绑定到当前新创建的对象
+    + 执行构造函数：执行构造函数代码，初始化新的对象
+    + 返回对象：如果构造函数并没有显式地返回一个对象，那么new表达式回自动返回新创建的对象
   - 解释下JavaScript中this是如何指向的
     + this永远指向函数运行时所在的对象。匿名函数或不处于任何对象中的函数指向window
     + 如果是call，apply,with，指定的this是谁，就是谁
@@ -56,8 +61,59 @@ permalink: /technology/interviewquestions
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
-  - 设计模式相关
-    + 订阅者模式的例子  
+  - JS中常用的设计模式
+    + 单例模式:确保一个类只有一个实例，并提供全局访问点
+      
+    ```javascript
+      const Singleton = (function(){
+        let instance;
+
+        function createInstance() {
+          const obj = new Object('I am the Iron man!');
+          return obj;
+        }
+
+        return {
+          getInstance: function(){
+            if(!instance){
+              instance = createInstance();
+            }
+            return instance;
+          }
+        }
+      })();
+
+      const instance1 = Singleton.getInstance();
+      const instance2 = Singleton.getInstance();
+
+      console.log(instance1 === instance2);// true
+    ```
+    + 工厂模式：用于创建对象的接口，根据不同参数返回不同的实例
+    + 工厂模式旨在将对象的创建与使用逻辑分离
+
+    ```javascript
+    function Car(type){
+      this.type = type;
+      this.drive = function(){
+        console.log(`Driving a ${this.type} car`)
+      }
+    }
+
+    function CarFactory () {
+      this.createCar = funciton(type){
+        // 这里可以做一些创建对象之前的处理
+        return new Car(type);
+      }
+    }
+
+    const factory = new CarFactory();
+    const car1 = factory.createCar('SUV');
+    const car2 = factory.createCar('Sedan');
+    car1.drive();// Driving a SUV car
+    car2.drive();// Driving a Sedan car
+    ```
+
+    + 订阅者模式
 
     ```javascript
     class EventEmitter {
@@ -244,6 +300,26 @@ permalink: /technology/interviewquestions
     + redux-saga 另一种基于ES6生成器的异步处理中间键。
     + redux-logger 日志记录，查看每个action及其产生的状态变化
 
+### Vuex
+  - Vuex 是什么
+    + 转为Vue.js应用程序设计的状态管理模式。通过集中式存储管理应用所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
+    + State 单一状态树，一个对象包含全部的应用层级状态。可共享
+    + Getter 类似于Vue组件中的计算属性，用于从store中派生出一些状态。
+    + Mutations 唯一能够改变Vuex store中状态的方法，必须是同步函数。每个Mutation都有一个字符串的事件类型和一个回调函数，这个回调函数则是实际状态更改的地方
+    + Actions 类似于Mutations，但Action提交的是Mutation，而不是直接变更状态，支持异步操作
+    + Modules 当应用非常复杂的时候，vuex可以将store分割为不同的模块（module），每个模块都拥有自己的一套state,mutation,action,getter，模块间支持嵌套
+
+### Redux与Vuex有什么异同
+  - 相似之处
+    + 单一状态树：两者都通过单一的状态树管理所有的状态。一个对象存储整个应用的状态
+    + 不可变性：状态不能直接改变，必须通过特定的方式修改（action,mutation,reducer）
+    + 集中式管理：两者都提供了一个集中式的状态管理，可在不同组件中共享状态
+    + 时间旅行调试：由于状态变更是同步的，可预测且有序，方便调试，追踪，定位
+  - 不同之处
+    + Vuex是转为vue设计的，深度集成了Vue的响应式系统。利用Vue的reactivity系统自动更新视图；Redux则与框架无关，可以与React，Angular，Vue一起使用
+    + Vuex通过mutations同步修改状态，使用actions来处理异步操作并提交mutations；Redux使用reducers来描述状态的变化，通过纯函数来执行状态变更。所有状态修改都通过dispatch一个action来触发reducer
+    + Vuex内置了模块化支持，方便的将状态，mutation，action和getter分割到不同的模块中。模块可嵌套；Redux本身没有内置模块化支持，但可以通过将reducer拆分成多个小的reducer，之后使用combineReducers来组合
+    + Redux有强大的中间键机制，在action被发送到reducer之前拦截处理。比如redux-saga与redux-thunk；Vuex通过action来处理异步操作，没有Redux那样丰富的中间件生态，但可通过插件机制扩展Vuex的功能
 ### 闲聊
   - Jquery为何可以不断的.调用？
   - 页面上需要横向排布的时候，你一般用什么办法？遇到过什么坑?
