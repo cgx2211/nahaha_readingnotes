@@ -97,6 +97,26 @@ permalink: /technology/interviewquestions
     console.log(child.name)// 输出Tom
     ```
     + 组合继承（原型链+构造函数）
+    
+    ```javascript
+    function Parent(name){
+      this.name = name;
+    }
+
+    Parent.prototype.getName = function(){// 原型上定义getName方法
+      return this.name;
+    }
+
+    function Child(name,age){
+      Parent.call(this.name);// 调用Parent的构造函数
+      this.age = age;
+    }
+
+    Child.prototype = new Parent();// Child的原型链指向Parent的实例
+
+    var child = new Child('Jack',25);
+    console.log(child.getName())// 输出Jack
+    ```
     + 原型式继承
     + 寄生式继承
     + ES6 class继承（基于原型）
