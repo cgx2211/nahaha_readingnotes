@@ -61,6 +61,14 @@ permalink: /technology/interviewquestions
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
+  - JS中的继承与常见的继承方式
+    + 原型链继承
+    + 构造函数继承
+    + 组合继承（原型链+构造函数）
+    + 原型式继承
+    + 寄生式继承
+    + ES6 class继承（基于原型）
+    + ES6扩展运算符继承（Object.assign）
   - JS中常用的设计模式
     + 单例模式:确保一个类只有一个实例，并提供全局访问点
       
@@ -320,6 +328,7 @@ permalink: /technology/interviewquestions
     + Vuex通过mutations同步修改状态，使用actions来处理异步操作并提交mutations；Redux使用reducers来描述状态的变化，通过纯函数来执行状态变更。所有状态修改都通过dispatch一个action来触发reducer
     + Vuex内置了模块化支持，方便的将状态，mutation，action和getter分割到不同的模块中。模块可嵌套；Redux本身没有内置模块化支持，但可以通过将reducer拆分成多个小的reducer，之后使用combineReducers来组合
     + Redux有强大的中间键机制，在action被发送到reducer之前拦截处理。比如redux-saga与redux-thunk；Vuex通过action来处理异步操作，没有Redux那样丰富的中间件生态，但可通过插件机制扩展Vuex的功能
+
 ### 闲聊
   - Jquery为何可以不断的.调用？
   - 页面上需要横向排布的时候，你一般用什么办法？遇到过什么坑?
