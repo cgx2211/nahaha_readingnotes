@@ -61,6 +61,7 @@ permalink: /technology/interviewquestions
     + call方法：call(thisObj，Object)。调用一个对象的一个方法。call将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象。若没有提供thisObj参数，那么默认为Global对象
     + apply方法：apply(thisObj，[argArray])。应用某一对象的一个方法，用另一个对象替换当前对象。若argArray不是有效的数组/有效的arguments对象则会导致TypeError。若未提供argArray与thisObj，thisObj默认为Global，且无法传递参数
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
+  - JS中，深拷贝的方法
   - JS中的继承与常见的继承方式
     + 原型链继承
 
@@ -118,9 +119,85 @@ permalink: /technology/interviewquestions
     console.log(child.getName())// 输出Jack
     ```
     + 原型式继承
+    
+    ```javascript
+    function object(o){
+      function F (){}// 一个构造函数
+      F.prototype = o;// 原型指向传入的对象
+      return new F();
+    }
+
+    var parent = {
+      name:'Jack',
+      getName:function(){// 对象中定义方法
+        return this.name;
+      }
+    }
+
+    var child = object(parent);// 这里的child是一个函数，这个函数的原型指向parent
+    console.log(child.getName());// 输出Jack
+    ```
     + 寄生式继承
+
+    ```javascript
+    function createAnother(origin){
+      var clone = object(origin);// 这个object应该是上文中的方法吧
+      // 这里相当于拷贝了一份
+      // 并在新的拷贝上添加sayHi的方法
+      clone.sayHi = function(){
+        return 'Hi';
+      }
+      return clone;
+    }
+
+    var parent = {
+      name:'Parent',
+      getName:function(){
+        return this.name;
+      }
+    }
+
+    var child = new creatAnother(parent);
+    console.log(child.sayHi());// 输出Hi
+    ```
     + ES6 class继承（基于原型）
+    
+    ```javascript
+    class Parent {
+      constructor (name){
+        this.name = name;
+      }
+
+      getName(){
+        return this.name;
+      }
+    }
+
+    class Child extends Parent{
+      constructor(name,age){
+        super(name);// 这里super就调用了Parent的构造函数
+        this.age = age;
+      }
+    }
+
+    const child = new Child('Jack',25);
+    console.log(child.getName());
+    ```
     + ES6扩展运算符继承（Object.assign）
+    
+    ```javascript
+    const Parent = {
+      name:'Tom',
+      getName(){
+        return this.name;
+      }
+    }
+
+    const child = Objcet.create(parent);
+    child.age = 25;
+
+    console.log(child.getName());// 输出Tom
+    ```
   - JS中常用的设计模式
     + 单例模式:确保一个类只有一个实例，并提供全局访问点
       
