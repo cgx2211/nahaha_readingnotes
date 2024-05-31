@@ -63,7 +63,39 @@ permalink: /technology/interviewquestions
     + bind方法：不同于上述两者直接调用，bind方法会返回一个新的函数。
   - JS中的继承与常见的继承方式
     + 原型链继承
+
+    ```javascript
+    function Parent(){
+      this.name = 'Parent';
+    }
+
+    Parent.prototype.getName = function(){
+      return this.name
+    };
+
+    function Child (){
+      this.age = 25;
+    }
+
+    Child.prototype = new Parent();// 设置原型链指向Parent的实例
+    var child = new Child();
+    
+    console.log(child.getName();)// 输出parent
+    ```
     + 构造函数继承
+    
+    ```javascript
+    function Parent(name){
+      this.name = name;
+    }
+    function Child(name,age){
+      Parent.call(this,name);// 在构造函数内调用Parent的构造函数
+      this.age = age;
+    }
+
+    var child = new Child('Tom',25);
+    console.log(child.name)// 输出Tom
+    ```
     + 组合继承（原型链+构造函数）
     + 原型式继承
     + 寄生式继承
