@@ -354,7 +354,15 @@ permalink: /technology/interviewquestions
     + void，用于函数没有返回值
     + never 没有值，很少用
     + unknown，不知道什么值，任何值可以赋给unknown，但unknown不能赋值给其他值
-
+  - 泛型是什么？
+    + TS中，泛型是一种允许在定义类，接口和函数时，延迟指定某中某些类型的概念。
+    + 定义函数、类、接口或类型别名时，不预先指定具体类型，而在实际使用中再指定。
+  - 聊一聊interface与type
+    + type，给类型取一个别名。注意，不能给同一个类型重复取别名
+    + interface，声明对象类型的另一种方法
+    + 大部分时候两者都可用，几乎所有interface的功能type都支持
+    + 最主要的区别是别名无法通过重复命名增加新属性，而interface支持重复扩展
+    + interface主要用于声明对象类型，不能给基本类型取别名（这是type的工作）
 ### 网络传输
   - HTTP是什么
     + HTTP全称HyperText Transfer Protocol，超文本传输协议。计算机在传输数据内容（文字，图片，视频等）时的规范
